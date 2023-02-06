@@ -370,7 +370,8 @@
         margin: 0 0 35px 0
         &-wulkan
           &::before
-            right: 141px
+            right: auto
+            left: 222px
 
       &-item
         &:nth-child(2)
@@ -396,11 +397,7 @@
   .land
     &__game
       height: 390px
-    &__info
-      &-title
-        &-wulkan
-          &::before
-            right: 111px
+
 
 @media screen and (max-width: 770px) and (orientation: portrait) and (max-height: 960px)
   .land
@@ -416,8 +413,7 @@
         &-wulkan
           font-size: 38px
           line-height: 56px
-          &::before
-            right: 81px
+
       &-copy
         bottom: 50px
 
@@ -438,6 +434,7 @@
   .land
     &__game
       height: 360px
+
 
 @media screen and (max-width: 730px) and (orientation: portrait)
   .land
@@ -520,7 +517,8 @@
           font-size: 34px
           line-height: 44px
           &::before
-            right: 147px
+            right: auto
+            left: 200px
             top: -11px
       &-link
         white-space: nowrap
@@ -706,7 +704,7 @@
     &__logo
       width: 166px
     &__info
-      transform: scale(0.4)
+      transform: scale(0.27)
       &-title
         &-bottom
           white-space: nowrap
@@ -722,6 +720,12 @@
       &-coin5
         width: 75px
         height: 65px
+
+
+@media screen and (max-width: 920px) and (orientation: landscape) and (max-height: 360px)
+  .land
+    &__info
+      transform: scale(.27)
 
 @media screen and (max-width: 760px) and (orientation: landscape) and (max-height: 400px)
   .land
@@ -760,7 +764,7 @@
       &-image
         top: 95%
     &__info
-      transform: scale(.3)
+      transform: scale(.27)
 
 @media screen and (max-width: 650px) and (orientation: landscape) and (max-height: 370px)
   .land
@@ -768,7 +772,7 @@
       &-image
         top: 93%
     &__info
-      transform: scale(0.35)
+      transform: scale(0.27)
 
 @media screen and (max-width: 570px) and (orientation: landscape) and (max-height: 385px)
   .land
@@ -783,7 +787,6 @@
 @media screen and (max-width: 570px) and (orientation: landscape) and (max-height: 330px)
   .land
     &__game
-
       &-image
         top: 97%
 
