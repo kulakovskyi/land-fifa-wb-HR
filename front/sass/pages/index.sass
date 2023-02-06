@@ -11,12 +11,13 @@ $font-suisse-med: SuisseIntl-Medium, sans-serif
 // 500
 $font-suisse-semb: SuisseIntl-SemiBold, sans-serif
 // 600
-$font-din: DINPro-CondLight, sans-serif
+
+$font-wulkan: WulkanDisplay-SemiBoldItalic, sans-serif
 
 body
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
   overscroll-behavior: none
-  background: $blue
+  background: #00003D
 
   img,
   picture
@@ -45,7 +46,7 @@ body
 
 
 .land
-  pointer-events: none
+  //pointer-events: none
   display: flex
   align-items: flex-end
   padding: 0 0 65px 100px
@@ -74,15 +75,35 @@ body
   &__info
     &-title
       font-family: $font-suisse-semb
-      font-size: 100px
-      line-height: 110px
-      letter-spacing: -0.02em
-      text-transform: uppercase
       color: $grey
       margin: 0 0 10px 0
       &-top,
       &-bottom
         font-family: $font-suisse-semb
+        text-transform: uppercase
+      &-top
+        font-size: 140px
+        line-height: 140px
+      &-bottom
+        font-size: 76px
+        line-height: 94px
+      &-wulkan
+        font-family: $font-wulkan
+        font-size: 76px
+        line-height: 94px
+        color: $magenta
+        position: relative
+        &::before
+          content: '5274,15 KN'
+          position: absolute
+          right: 120px
+          top: -8px
+          font-family: $font-suisse-med
+          font-size: 14px
+          line-height: 24px
+          letter-spacing: 0.02em
+          text-transform: uppercase
+          color: rgba(237, 237, 237, 0.6)
     .glitch
       position: relative
       &:after,
@@ -196,32 +217,43 @@ body
       &:nth-child(1)
         margin: 0 15px 0 0
       &:nth-child(2)
-        margin: 0 30px 0 0
+        margin: 0 23px 0 0
         img
+          max-width: 42px
           display: inline-block
           position: relative
-          top: 20px
+          top: 13px
       &-top
         font-family: $font-suisse-med
-        font-size: 100px
-        line-height: 100px
+        font-size: 70px
+        line-height: 70px
         text-transform: uppercase
         color: $magenta
+        &-in
+          position: relative
+          &::before
+            content: '226,04 kn'
+            font-family: $font-suisse-med
+            position: absolute
+            top: -19px
+            left: 0
+            font-size: 14px
+            line-height: 24px
+            letter-spacing: 0.02em
+            text-transform: uppercase
+            color: rgba(237, 237, 237, 0.6)
 
       &-bottom
         font-family: $font-suisse-semb
-        font-size: 28px
-        line-height: 28px
+        font-size: 20px
+        line-height: 24px
         color: $grey
         text-transform: uppercase
-        span
-          color: $magenta
-          font-family: $font-suisse-semb
     &-link
       pointer-events: initial
       display: inline-block
       animation: 4s ease shadowButton infinite
-      padding: 30px 85px 28px
+      padding: 30px 126px 28px
       font-family: $font-suisse-semb
       font-size: 24px
       line-height: 31px
@@ -240,7 +272,7 @@ body
       align-items: center
       &-img
         &:not(:last-child)
-          margin: 0 30px 0 0
+          margin: 0 25px 0 0
   &__game
     position: absolute
     height: 100%
