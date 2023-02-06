@@ -1,0 +1,633 @@
+$blue: #000055
+$magenta: #ff267e
+$green: #05C489
+$green-hover: #09B47F
+$grey: #EDEDED
+$text: #292929
+
+$font-suisse-reg: SuisseIntl-Regular, sans-serif
+// 400
+$font-suisse-med: SuisseIntl-Medium, sans-serif
+// 500
+$font-suisse-semb: SuisseIntl-SemiBold, sans-serif
+// 600
+$font-din: DINPro-CondLight, sans-serif
+
+body
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+  overscroll-behavior: none
+  background: $blue
+
+  img,
+  picture
+    max-width: 100%
+    height: auto
+
+
+
+.all-link
+  position: absolute
+  width: 100%
+  height: 100%
+  top: 0
+  left: 0
+  //z-index: 4
+
+.fav__page
+  width: 100%
+  height: 100%
+  overflow: hidden
+  -webkit-tap-highlight-color: transparent
+  position: relative
+  background: #00003D
+  @media screen and (max-width: 600px) and (orientation: portrait)
+    height: auto
+
+
+.land
+  pointer-events: none
+  display: flex
+  align-items: flex-end
+  padding: 0 0 65px 100px
+  width: 100%
+  height: 100%
+  overflow: hidden
+  position: relative
+  @media screen and (min-width: 700px) and (orientation: landscape) and (min-height: 451px)
+    background: #00003D url('../img/bg-desc.jpg') no-repeat
+    background-size: 100% 100%
+  @media screen and (min-width: 601px) and (max-width: 1024px) and (orientation: portrait)
+    background: #00003D url('../img/bg-tab.jpg') no-repeat 50% 0/cover
+  @media screen and (max-width: 600px) and (orientation: portrait)
+    background: #00003D url("../img/bg-mob.jpg") no-repeat 50% 0/contain
+  @media (max-width: 920px) and (orientation: landscape) and (max-height: 450px)
+    background: #00003D url("../img/bg-landscape.jpg") no-repeat
+    background-size: 100% 100%
+
+  &__logo
+    position: absolute
+    top: 0
+    left: 0
+    width: 458px
+    height: 200px
+    background: url('../img/logo.svg') no-repeat 50% 0/contain
+  &__info
+    &-title
+      font-family: $font-suisse-semb
+      font-size: 100px
+      line-height: 110px
+      letter-spacing: -0.02em
+      text-transform: uppercase
+      color: $grey
+      margin: 0 0 10px 0
+      &-top,
+      &-bottom
+        font-family: $font-suisse-semb
+    .glitch
+      position: relative
+      &:after,
+      &:before
+        content: attr(data-trick)
+        position: absolute
+        top: 0
+        left: 0
+        //background-color: $blue
+        width: 100%
+        height: 100%
+      &:after
+        left: -5px
+        text-shadow: -1.75px 0 $magenta
+        animation-name: glitch-anim-2
+        animation-duration: 3s
+        animation-iteration-count: infinite
+        animation-timing-function: linear
+        animation-direction: alternate-reverse
+        animation-fill-mode: both
+        color: $grey
+      &:before
+        content: attr(data-trick)
+        position: absolute
+        top: 0
+        left: 5px
+        text-shadow: -1.75px 0 $magenta
+        animation-name: glitch-anim-1
+        animation-duration: 3s
+        animation-iteration-count: infinite
+        animation-timing-function: linear
+        animation-direction: alternate-reverse
+        animation-fill-mode: both
+        color: $magenta
+      @keyframes glitch-anim-1
+        0%
+          clip: rect(100px, 1500px, 150px, 0)
+
+        10%
+          clip: rect(50px, 1500px, 25px, 0)
+
+        20%
+          clip: rect(50px, 1500px, 25px, 0)
+
+        30%
+          clip: rect(50px, 1500px, 400px, 0)
+
+        40%
+          clip: rect(600px, 1500px, 50px, 0)
+
+        50%
+          clip: rect(300px, 1500px, 65px, 0)
+
+        60%
+          clip: rect(100px, 1500px, 150px, 0)
+
+        70%
+          clip: rect(50px, 1500px, 25px, 0)
+
+        80%
+          clip: rect(200px, 1500px, 30px, 0)
+
+        90%
+          clip: rect(600px, 1500px, 50px, 0)
+
+        100%
+          clip: rect(600px, 1500px, 50px, 0)
+
+      @keyframes glitch-anim-2
+        0%
+          clip: rect(100px, 1500px, 150px, 0)
+
+        10%
+          clip: rect(50px, 1500px, 25px, 0)
+
+        20%
+          clip: rect(50px, 1500px, 25px, 0)
+
+        30%
+          clip: rect(50px, 1500px, 400px, 0)
+
+        40%
+          clip: rect(600px, 1500px, 50px, 0)
+
+        50%
+          clip: rect(300px, 1500px, 65px, 0)
+
+        60%
+          clip: rect(100px, 1500px, 150px, 0)
+
+        70%
+          clip: rect(50px, 1500px, 25px, 0)
+
+        80%
+          clip: rect(200px, 1500px, 30px, 0)
+
+        90%
+          clip: rect(600px, 1500px, 50px, 0)
+
+        100%
+          clip: rect(600px, 1500px, 50px, 0)
+    &-wrapper
+      margin: 0 0 45px 0
+    &-list
+      display: flex
+      align-items: flex-start
+      margin: 0 0 35px 0
+    &-item
+      display: flex
+      flex-direction: column
+      &:nth-child(1)
+        margin: 0 15px 0 0
+      &:nth-child(2)
+        margin: 0 30px 0 0
+        img
+          display: inline-block
+          position: relative
+          top: 20px
+      &-top
+        font-family: $font-suisse-med
+        font-size: 100px
+        line-height: 100px
+        text-transform: uppercase
+        color: $magenta
+
+      &-bottom
+        font-family: $font-suisse-semb
+        font-size: 28px
+        line-height: 28px
+        color: $grey
+        text-transform: uppercase
+        span
+          color: $magenta
+          font-family: $font-suisse-semb
+    &-link
+      pointer-events: initial
+      display: inline-block
+      animation: 4s ease shadowButton infinite
+      padding: 30px 85px 28px
+      font-family: $font-suisse-semb
+      font-size: 24px
+      line-height: 31px
+      color: $blue
+      background: #05C489
+      //box-shadow: 0px 0px 23px #05C489
+      border-radius: 4px
+      text-align: center
+      letter-spacing: 0.08em
+      text-transform: uppercase
+      transition: background-color .3s ease
+      &:hover
+        background: $green-hover
+    &-copy
+      display: flex
+      align-items: center
+      &-img
+        &:not(:last-child)
+          margin: 0 30px 0 0
+  &__game
+    position: absolute
+    height: 100%
+    width: 38.5vw
+    right: 160px
+    top: 0
+    &-top
+      position: absolute
+      top: 0
+      left: 50%
+      transform: translateX(-50%)
+      width: 100%
+      height: 160px
+      background: #0D4AAE
+      border-radius: 350px
+      opacity: 0.5
+      filter: blur(60px)
+      animation: 3s ease opacityBoxTop infinite
+    &-bottom
+      position: absolute
+      bottom: -80px
+      left: 50%
+      transform: translateX(-50%)
+      width: 100%
+      height: 160px
+      background: #0D4AAE
+      border-radius: 350px
+      opacity: 0.5
+      filter: blur(60px)
+      animation: 3s ease opacityBoxTop infinite
+    &-wrapper
+      position: relative
+      height: 100%
+      width: 100%
+    &::before
+      content: ''
+      position: absolute
+      left: 50%
+      top: 50%
+      transform: translate(-50%, -50%)
+      opacity: 0
+      height: 100%
+      width: 75%
+      background: linear-gradient(180deg, rgba(13, 74, 174, 0) 5.58%, rgba(13, 74, 174, 0.6) 46.01%, rgba(13, 74, 174, 0.155948) 74.27%)
+      box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25)
+      filter: blur(5px)
+      animation: 3s ease opacityBox infinite
+    &-image
+      width: 88%
+      height: 681px
+      position: absolute
+      z-index: 3
+      left: 50px
+      top: 50%
+      transform: translateY(-50%)
+      filter: drop-shadow(0 0 0.75rem $magenta)
+      animation: 8s ease gameAnim infinite
+    &-coin1
+      position: absolute
+      filter: drop-shadow(0 0 0.75rem $magenta)
+      animation: 10s ease coin1 infinite
+      top: 16%
+      left: 14%
+      width: 122px
+      height: 122px
+      background: url("../img/coin1.png") no-repeat 50% 0/contain
+      @media screen and (max-width: 600px) and (orientation: portrait)
+        background: url("../img/coin1-mob.png") no-repeat 50% 0/contain
+      @media (max-width: 920px) and (orientation: landscape) and (max-height: 450px)
+        background: url("../img/coin1-mob.png") no-repeat 50% 0/contain
+    &-coin2
+      position: absolute
+      animation: 13s ease coin2 infinite
+      top: 16%
+      right: 5%
+      width: 156px
+      height: 178px
+      background: url("../img/coin2.png") no-repeat 50% 0/contain
+      @media screen and (max-width: 600px) and (orientation: portrait)
+        background: url("../img/coin2-mob.png") no-repeat 50% 0/contain
+      @media (max-width: 920px) and (orientation: landscape) and (max-height: 450px)
+        background: url("../img/coin2-mob.png") no-repeat 50% 0/contain
+    &-coin3
+      position: absolute
+      animation: 9s ease coin3 infinite
+      top: 35%
+      left: 18%
+      width: 113px
+      height: 116px
+      background: url("../img/coin3.png") no-repeat 50% 0/contain
+      @media screen and (max-width: 600px) and (orientation: portrait)
+        background: url("../img/coin3-mob.png") no-repeat 50% 0/contain
+      @media (max-width: 920px) and (orientation: landscape) and (max-height: 450px)
+        background: url("../img/coin3-mob.png") no-repeat 50% 0/contain
+    &-coin4
+      position: absolute
+      animation: 12s ease coin4 infinite
+      top: 52%
+      right: 18%
+      width: 101px
+      height: 101px
+      background: url("../img/coin4.png") no-repeat 50% 0/contain
+      @media screen and (max-width: 600px) and (orientation: portrait)
+        background: url("../img/coin4-mob.png") no-repeat 50% 0/contain
+      @media (max-width: 920px) and (orientation: landscape) and (max-height: 450px)
+        background: url("../img/coin4-mob.png") no-repeat 50% 0/contain
+    &-coin5
+      position: absolute
+      animation: 8s ease coin4 infinite
+      bottom: 16%
+      left: 18%
+      width: 165px
+      height: 135px
+      background: url("../img/coin5.png") no-repeat 50% 0/contain
+      @media screen and (max-width: 600px) and (orientation: portrait)
+        background: url("../img/coin5-mob.png") no-repeat 50% 0/contain
+      @media (max-width: 920px) and (orientation: landscape) and (max-height: 450px)
+        background: url("../img/coin5-mob.png") no-repeat 50% 0/contain
+    &-coin6
+      position: absolute
+      animation: 8s ease coin2 infinite
+      bottom: 16%
+      right: 5%
+      width: 165px
+      height: 135px
+      background: url("../img/coin6.png") no-repeat 50% 0/contain
+      @media screen and (max-width: 600px) and (orientation: portrait)
+        background: url("../img/coin6-mob.png") no-repeat 50% 0/contain
+      @media (max-width: 920px) and (orientation: landscape) and (max-height: 450px)
+        background: url("../img/coin6-mob.png") no-repeat 50% 0/contain
+
+
+
+/* Animations */
+
+@keyframes shadowButton
+  0%
+    filter: drop-shadow(0 0 0.55rem #05C489)
+  50%
+    filter: drop-shadow(0 0 1.3rem #05C489)
+  100%
+    filter: drop-shadow(0 0 0.55rem #05C489)
+
+@keyframes coin1
+  0%
+    transform: translateY(-10px) rotate(0deg)
+    filter: drop-shadow(0 0 0rem $magenta)
+  50%
+    transform: translateY(20px) rotate(-7deg)
+    filter: drop-shadow(0 0 0.75rem $magenta)
+  100%
+    transform: translateY(-10px) rotate(0deg)
+    filter: drop-shadow(0 0 0rem $magenta)
+
+@keyframes coin2
+  0%
+    transform: translateY(10px) rotate(0)
+    filter: drop-shadow(0 0 0rem $magenta)
+  50%
+    transform: translateY(-20px) rotate(-6deg)
+    filter: drop-shadow(0 0 0.75rem $magenta)
+  100%
+    transform: translateY(10px) rotate(0)
+    filter: drop-shadow(0 0 0rem $magenta)
+
+@keyframes coin3
+  0%
+    transform: translateY(15px) rotate(0)
+    filter: drop-shadow(0 0 0rem $magenta)
+  50%
+    transform: translateY(-15px) rotate(8deg)
+    filter: drop-shadow(0 0 0.75rem $magenta)
+  100%
+    transform: translateY(15px) rotate(0)
+    filter: drop-shadow(0 0 0rem $magenta)
+
+@keyframes coin4
+  0%
+    transform: translateY(15px) rotate(0)
+    filter: drop-shadow(0 0 0rem $magenta)
+  50%
+    transform: translateY(45px) rotate(10deg)
+    filter: drop-shadow(0 0 0.75rem $magenta)
+  100%
+    transform: translateY(15px) rotate(0)
+    filter: drop-shadow(0 0 0rem $magenta)
+
+@keyframes opacityBox
+  0%
+    opacity: 0
+  50%
+    opacity: 1
+  100%
+    opacity: 0
+
+@keyframes opacityBoxTop
+  0%
+    opacity: 0
+  50%
+    opacity: 0.5
+  100%
+    opacity: 0
+
+@keyframes gameAnim
+  0%
+    filter: drop-shadow(0 0 0.75rem $magenta)
+    transform: translateY(-60%) rotate(0)
+  50%
+    filter: drop-shadow(0 0 1.75rem $magenta)
+    transform: translateY(-50%) rotate(4deg)
+  100%
+    filter: drop-shadow(0 0 0.75rem $magenta)
+    transform: translateY(-60%) rotate(0)
+
+@keyframes gameAnim-mob
+  0%
+    filter: drop-shadow(0 0 0.75rem $magenta)
+    transform: rotate(0)
+  50%
+    filter: drop-shadow(0 0 1.75rem $magenta)
+    transform: rotate(4deg)
+  100%
+    filter: drop-shadow(0 0 0.75rem $magenta)
+    transform: rotate(0)
+
+@keyframes glitch-anim-1
+  0%
+    opacity: 1
+    transform: translate3d(10px, 0, 0)
+    clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%)
+
+  2%
+    clip-path: polygon(0 15%, 100% 15%, 100% 15%, 0 15%)
+
+  4%
+    clip-path: polygon(0 10%, 100% 10%, 100% 20%, 0 20%)
+
+  6%
+    clip-path: polygon(0 1%, 100% 1%, 100% 2%, 0 2%)
+
+  8%
+    clip-path: polygon(0 33%, 100% 33%, 100% 33%, 0 33%)
+
+  10%
+    clip-path: polygon(0 44%, 100% 44%, 100% 44%, 0 44%)
+
+  12%
+    clip-path: polygon(0 50%, 100% 50%, 100% 20%, 0 20%)
+
+  14%
+    clip-path: polygon(0 70%, 100% 70%, 100% 70%, 0 70%)
+
+  16%
+    clip-path: polygon(0 80%, 100% 80%, 100% 80%, 0 80%)
+
+  18%
+    clip-path: polygon(0 50%, 100% 50%, 100% 55%, 0 55%)
+
+  20%
+    clip-path: polygon(0 70%, 100% 70%, 100% 80%, 0 80%)
+
+  21.9%
+    opacity: 1
+    transform: translate3d(10px, 0, 0)
+
+  22%,
+  100%
+    opacity: 0
+    transform: translate3d(0, 0, 0)
+    clip-path: polygon(0 0, 0 0, 0 0, 0 0)
+
+@keyframes glitch-anim-2
+  0%
+    opacity: 1
+    transform: translate3d(calc(-1 * 10px), 0, 0)
+    clip-path: polygon(0 25%, 100% 25%, 100% 30%, 0 30%)
+
+  3%
+    clip-path: polygon(0 3%, 100% 3%, 100% 3%, 0 3%)
+
+  5%
+    clip-path: polygon(0 5%, 100% 5%, 100% 20%, 0 20%)
+
+  7%
+    clip-path: polygon(0 20%, 100% 20%, 100% 20%, 0 20%)
+
+  9%
+    clip-path: polygon(0 40%, 100% 40%, 100% 40%, 0 40%)
+
+  11%
+    clip-path: polygon(0 52%, 100% 52%, 100% 59%, 0 59%)
+
+  13%
+    clip-path: polygon(0 60%, 100% 60%, 100% 60%, 0 60%)
+
+  15%
+    clip-path: polygon(0 75%, 100% 75%, 100% 75%, 0 75%)
+
+  17%
+    clip-path: polygon(0 65%, 100% 65%, 100% 40%, 0 40%)
+
+  19%
+    clip-path: polygon(0 45%, 100% 45%, 100% 50%, 0 50%)
+
+  20%
+    clip-path: polygon(0 14%, 100% 14%, 100% 33%, 0 33%)
+
+  21.9%
+    opacity: 1
+    transform: translate3d(calc(-1 * 10px), 0, 0)
+
+  22%,
+  100%
+    opacity: 0
+    transform: translate3d(0, 0, 0)
+    clip-path: polygon(0 0, 0 0, 0 0, 0 0)
+
+@keyframes glitch-anim-3
+  0%
+    opacity: 1
+    transform: translate3d(0, calc(-1 * 5px), 0) scale3d(-1, -1, 1)
+    clip-path: polygon(0 1%, 100% 1%, 100% 3%, 0 3%)
+
+  1.5%
+    clip-path: polygon(0 10%, 100% 10%, 100% 9%, 0 9%)
+
+  2%
+    clip-path: polygon(0 5%, 100% 5%, 100% 6%, 0 6%)
+
+  2.5%
+    clip-path: polygon(0 20%, 100% 20%, 100% 20%, 0 20%)
+
+  3%
+    clip-path: polygon(0 10%, 100% 10%, 100% 10%, 0 10%)
+
+  5%
+    clip-path: polygon(0 30%, 100% 30%, 100% 25%, 0 25%)
+
+  5.5%
+    clip-path: polygon(0 15%, 100% 15%, 100% 16%, 0 16%)
+
+  7%
+    clip-path: polygon(0 40%, 100% 40%, 100% 39%, 0 39%)
+
+  8%
+    clip-path: polygon(0 20%, 100% 20%, 100% 21%, 0 21%)
+
+  9%
+    clip-path: polygon(0 60%, 100% 60%, 100% 55%, 0 55%)
+
+  10.5%
+    clip-path: polygon(0 30%, 100% 30%, 100% 31%, 0 31%)
+
+  11%
+    clip-path: polygon(0 70%, 100% 70%, 100% 69%, 0 69%)
+
+  13%
+    clip-path: polygon(0 40%, 100% 40%, 100% 41%, 0 41%)
+
+  14%
+    clip-path: polygon(0 80%, 100% 80%, 100% 75%, 0 75%)
+
+  14.5%
+    clip-path: polygon(0 50%, 100% 50%, 100% 51%, 0 51%)
+
+  15%
+    clip-path: polygon(0 90%, 100% 90%, 100% 90%, 0 90%)
+
+  16%
+    clip-path: polygon(0 60%, 100% 60%, 100% 60%, 0 60%)
+
+  18%
+    clip-path: polygon(0 100%, 100% 100%, 100% 99%, 0 99%)
+
+  20%
+    clip-path: polygon(0 70%, 100% 70%, 100% 71%, 0 71%)
+
+  21.9%
+    opacity: 1
+    transform: translate3d(0, calc(-1 * 5px), 0) scale3d(-1, -1, 1)
+
+  22%,
+  100%
+    opacity: 0
+    transform: translate3d(0, 0, 0)
+    clip-path: polygon(0 0, 0 0, 0 0, 0 0)
+
+
+
+
